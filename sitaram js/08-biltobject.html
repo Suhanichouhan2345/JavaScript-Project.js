@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p> hellow !</p>
+    <script>
+        
+const product = {
+    name: 'socks',
+    price: 1090
+};
+console.log(product);
+console.log(product.name);
+console.log(product.price);
+
+product.name = 'cotton socks';
+console.log(product);
+
+product.newProperty = true;
+console.log(product);
+
+delete product.newProperty;
+console.log(product);
+
+//-------------------------------------
+const product2 = {
+    name : 'shirt',
+    'delivery - items ' : '1 day',  // ismain property ko '' single code main rukha h keyuole - ismain ye confusion ho raha h.
+    day : 'delivery - items'
+};
+
+console.log(product2);
+//-----------------------------
+
+const product3 = {
+    name : 't-shirt',
+    'delivery - items ' : '1 day', 
+    day : ['delivery-items'] // this is called breaket notaion.
+};
+console.log(product3);
+//console.log(product3.delivery-time);// given an error.
+console.log(product3['delivery-time']);//undefined
+
+//--------------------
+console.log(product3.name); // shirt
+console.log(product3['name']); // breaket notaion we also assces as the breaket as  accses notaion likhe (.) dot notaion
+//----------------------
+
+console.log(typeof console) // object.
+console.log(typeof (log))//undefined [log is function inside a log].
+console.log(typeof console.log) // function.
+//-------------------------------------------------------------------------------------------------------------------------------------
+// object ke nader nested obejct 
+
+ const product4 = {
+    name : 'suhani',
+    rating : {
+        staes : 4.5,
+        count : 87,
+        sum : 2+2
+      //  value : suhani // give error because we can't [store any valriabe]
+      //value : 'suhani' // use singe code they give[undefined]
+    }
+ };
+console.log(product4.rating.vale); // undefined
+console.log(product4.rating.count); //87
+console.log(product4.rating.sum); // 4
+// nested object dosn't store string value [only store as variable , numbers , and any calculation]
+
+//------------------------------------------------------------------------------------------------------------------------------------
+
+ //inside ka object use as function
+  const product5 = {
+        name: 'shirt',
+        'delivery-time': '1 day',
+        rating: {
+          stars: 4.5,
+          count: 87
+        },
+        fun: function function1() {
+          console.log('function inside object');
+        },
+        
+        fun: function function2(){
+          let x = 2+6;
+            console.log(x);
+        }
+      
+      };
+ product5.fun(); //function inside object 
+ //-------------------------------------------------------------------------------------------------------------------------------------
+  product5.fun(); // phale iska outpute [function inside object]
+        //  then : same object main same property banaye but function same toh abh solution [8] aa raha {resaon : top down approch} ousene function1 main rewrite kara  function2.
+//----
+  //  product5.function1(); [error dega]
+
+  const object = {
+  name : 'Suhani',
+  surname : 'chouhan',
+  dating : {
+    persion : 0,
+    gender : 'alway femail'
+  },
+  fun : function one(){
+    console.log(object.name);
+  }
+};
+console.log(object);
+object.fun(); // Suhani
+console.log(object.fun()); //undefined
+console.log(object.dating.persion); //0
+object.fun(); // Suhani
+//---------------------------------------------------------------------
+                          // built object
+                          
+ console.log(JSON.stringify(product5)); // ager hu ye use kare toh ye humko [javaScript] se convert karke [JSON] lagauange main krta h 
+ // MAIN POINT :
+ //  1 } [JSON] not support function islye outpute main function show nhi ho raha 
+ //  2 } or second point [JSON] not support single code {' '} they support only {" "} double code.
+
+ console.log(typeof(JSON.stringify(product5)));  // string.
+ console.log(typeof(JSON.stringify)); // function
+ console.log(typeof(JSON.stringify())); // undefined
+
+        //  ye humne [javascript ko JSON ko convert kara h ]
+        // abh [JSON ko javascript main krna h] then we use :
+    
+ console.log(JSON.stringify(product5)); 
+ const saveJsonString = JSON.stringify(product5);
+ console.log(JSON.parse(saveJsonString)); // abh outpute js ke form main ayega 
+//console.log(typeof(JSON.parse())); error
+console.log(typeof(JSON.parse(saveJsonString)));  // object
+console.log(typeof(JSON.parse(JSON.stringify(product5))));  // object
+
+
+//----------------------------------------------------------------------------
+
+                                     // Auto-Boxing
+ console.log('hello'.length);  // 5
+ console.log('helloe'.toUpperCase()); //HELLO
+ console.log('Helloe'.toLocaleUpperCase()); //HELLO
+  console.log('Helloe'.toLowerCase()); //helloe
+  console.log()
+
+ 
+
+
+      console.log('hello'.length);
+      console.log('hello'.toUpperCase());
+
+      const object1 = {
+        message: 'hello',
+        price: 799
+      };
+      const object2 = object1;
+
+      object1.message = 'Good job!';
+      console.log(object1);
+      console.log(object2);
+
+      const object3 = {
+        message: 'Good job!',
+        price: 799
+      };
+      console.log(object1 === object3);
+
+      // const message = object1.message;
+      const { message, price: cost } = object1;
+      console.log(message);
+      console.log(cost);
+
+      const object4 = {
+        // message: message,
+        message,
+        // method: function function1() {
+
+        // },
+        // method: function() {
+
+        // },
+        method() {
+
+        }
+      };
+
+
+</script> 
+</body>
+</html>

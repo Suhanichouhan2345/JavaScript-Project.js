@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>calculation</title>
+</head>
+<style>
+    button{
+        background-color: rgb(4, 167, 42);
+        color: white;
+    }
+</style>
+<body>
+
+<p>calculation</p>
+
+<input placeholder="write your cost" class="js-cost" onkeydown="console.log(event)
+ keydownhandle(event);
+">
+<button onclick="calculate()">calculate</button>
+
+<p class="total-cost"></p>
+
+<script>
+    String(25)
+    console.log('25' -5);
+    console.log('25' + 5);
+
+    window.document
+    window.console.log('window');
+    window.alert
+function keydownhandle(event){
+if(event.key === 'Enter'){
+    calculate();
+}
+}
+function calculate(){
+    const inpute = document.querySelector('.js-cost');
+  let cost = Number(inpute.value);
+ console.log(cost);
+    if(cost < 40){
+        cost = cost + 10;
+        console.log(cost);
+    }
+
+    document.querySelector('.total-cost').innerHTML = `$${cost}`;
+}
+
+</script>
+
+</body>
+</html>

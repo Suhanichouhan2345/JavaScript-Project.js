@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>learning</title>
+</head>
+<style>
+    body{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgb(71, 71, 177);
+}
+
+    body:hover{
+        background-color:rgb(159, 78, 176);
+       
+    }
+    button {
+     color: white;
+     background-color: rgb(15, 14, 14);
+     border: white 2px solid rgba(237, 231, 231, 0.771);
+     gap: 30px;
+     margin: 30px;
+     padding: 30px;
+    }
+    .main{
+        background-color: rgb(18, 15, 15);
+         margin: 10px;
+         padding: 10px;
+         border: 10px white solid;
+         height:90vh;
+         width: 100%;
+         display: flex;
+          flex-direction: column; 
+         align-items: center;
+         justify-content: center;
+    }
+   .main:hover{
+  border: 10px solid  rgb(198, 198, 255);
+  background-color:  rgb(145, 145, 243);
+}
+    .one{
+        background-color: rgb(198, 198, 255);
+    }
+   
+   button:hover{
+    color: black;
+     background-color: rgb(240, 240, 243);
+       border: rgb(213, 91, 91) 2px solid rgba(237, 231, 231, 0.771);
+   }
+    .to{
+        background-color: rgb(198, 198, 255);
+    }
+
+    .three{
+        background-color: rgb(198, 198, 255);
+        color: black;
+      gap: 30px;
+     margin: 30px;
+     padding: 30px;
+    }
+</style>
+<body>
+    <div class="main">
+<div class="one">
+    <button onclick="
+          const value = pickup();
+          document.querySelector('.class').innerHTML =`  Computer : ${value} `;
+        ">Rock</button> 
+
+    <button onclick="
+ const value = pickup();
+document.querySelector('.class').innerHTML =` Computer : ${value} `;
+    ">paper</button>
+
+    <button onclick="
+ const value = pickup();
+ document.querySelector('.class').innerHTML =`  Computer : ${value} `;
+    ">Scissor</button>
+
+
+
+<div class="to">
+<button onclick="
+   const reset = 'fer se chalo krle bhai'
+ document.querySelector('.class').innerHTML =`  Computer : ${reset} `;
+
+">Reset</button>
+</div></div>
+
+<div class="three">
+<p class="class"></p>
+
+</div>
+</div>  
+    <script>
+ 
+ let computerMove = ' ';
+
+        function pickup(computerMove){
+            const randomNumber = Math.random();
+           
+            if(randomNumber >=0 && randomNumber < 1/3){
+            computerMove = 'Rcok';
+            } else if (randomNumber >=1/3 && randomNumber <2/3){
+                computerMove = 'Paper';
+            } else if ( randomNumber >= 2/3 && randomNumber < 1){
+                computerMove = 'Scissor';
+            }
+            return computerMove;
+        }
+    </script>
+</body>
+</html>

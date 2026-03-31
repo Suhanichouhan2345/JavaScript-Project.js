@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Todo List</title>
+</head>
+
+<body>
+  <p>Todo List Display on console</p>
+  <input placeholder="Todo List" class="inpute">
+  <button onclick="addTodo()">add</button><br><br>
+
+  <p>Todo List Display screen</p>
+
+  <input placeholder="Todo List" class="inpute1">
+  
+   <input type="date" class="todo-date">
+  <button onclick="addTodo1()">add</button>
+ 
+
+  <div class="div-show-text"></div>
+  <script>
+
+    //const TodoList = [];
+    
+    function addTodo() {
+      const inputeVale = document.querySelector('.inpute');
+      const name = inputeVale.value;
+      console.log(name);
+      inputeVale.value = ' ';
+    }
+
+
+    const TodoList = [];
+    renderTodo();
+    function renderTodo() {
+
+      let TodoListHtML = '';
+      for (let i = 0; i < TodoList.length; i++) {
+        const todo = TodoList[i];
+       const html = `
+  <p>
+    ${todo.name} - ${todo.date}
+    <button onclick="deleteTodo(${i})">Delete</button>
+  </p>
+`;
+        TodoListHtML += html;
+      }
+      console.log(TodoListHtML);
+      document.querySelector('.div-show-text').innerHTML = TodoListHtML;
+    }
+    function addTodo1() {
+      const inputeVale = document.querySelector('.inpute1');
+        const dateInput = document.querySelector('.todo-date');
+
+      const name = inputeVale.value;
+       const date = dateInput.value;
+       if (name === '' || date === '') {
+    alert('Please enter todo and date');
+    return;
+  }
+
+      TodoList.push( {name , date});
+
+      console.log(TodoList);
+      inputeVale.value = '';
+       dateInput.value = '';
+      renderTodo();
+    }
+    function deleteTodo(index) {
+      TodoList.splice(index, 1);
+      renderTodo();
+    }
+</script>
+</body>
+</html>

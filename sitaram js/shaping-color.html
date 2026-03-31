@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>color change</title>
+</head>
+<style>
+    body {
+        display: flex;
+        justify-content: center;
+        align-content: center;
+        padding-top: 90px;
+        background-color: black;
+    }
+
+    div {
+        margin: 30px;
+        height: 40vh;
+        width: 100px;
+        background-color: rgb(227, 231, 231);
+      
+    }
+</style>
+
+<body>
+
+    <div class="one" onclick="
+    const value =change();
+    document.querySelector('.one').innerHTML = ` ${value}`;
+    "></div>
+
+
+    <script>
+        function change() {
+            let number = Math.floor(Math.random() * 11);
+
+            if (number >= 0 && number <= 3) {
+                document.querySelector('.one').style.backgroundColor = 'red';
+            }
+           else  if (number >= 4 && number <= 6) {
+                document.querySelector('.one').style.backgroundColor = 'blue';
+            }
+       else if (number >= 7 && number <= 10) {
+                document.querySelector('.one').style.backgroundColor = 'pink';
+            }
+            return number;
+        }
+    </script>
+
+</body>
+
+</html>

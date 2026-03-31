@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Fun Boxes</title>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 20px;
+        background: #f0f8ff;
+    }
+
+    h1 {
+        margin-bottom: 20px;
+        color: #ff4081;
+    }
+
+    .boxes {
+        display: grid;
+        grid-template-columns: repeat(5, 70px);
+        grid-gap: 10px;
+    }
+
+    .box {
+        width: 70px;
+        height: 70px;
+        background-color: #fff;
+        border: 2px solid #333;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-weight: bold;
+        font-size: 18px;
+        cursor: pointer;
+        transition: 0.3s;
+        border-radius: 8px;
+    }
+
+    .box:hover {
+        transform: scale(1.1);
+        border-color: #ff4081;
+    }
+</style>
+</head>
+<body>
+
+<h1>Click the Boxes!</h1>
+
+<div class="boxes">
+    <div class="box">1</div>
+    <div class="box">2</div>
+    <div class="box">3</div>
+    <div class="box">4</div>
+    <div class="box">5</div>
+    <div class="box">6</div>
+    <div class="box">7</div>
+    <div class="box">8</div>
+    <div class="box">9</div>
+    <div class="box">10</div>
+    <div class="box">11</div>
+    <div class="box">12</div>
+    <div class="box">13</div>
+    <div class="box">14</div>
+    <div class="box">15</div>
+</div>
+
+<script>
+ 
+    const boxes = document.querySelectorAll('.box');
+    boxes.forEach(box => {
+        box.addEventListener('click', () => {
+            const colors = ['#ff9999','#99ff99','#99ccff','#ffcc99','#ff66cc','#66ffcc'];
+            const randomColor = colors[Math.floor(Math.random() * colors.length)];
+            box.style.backgroundColor = randomColor;
+        });
+    });
+
+</script>
+
+</body>
+</html>

@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Interactive Boxes</title>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 20px;
+        background: linear-gradient(135deg, #ff9a9e, #fad0c4);
+    }
+
+    h1 {
+        text-align: center;
+        margin-bottom: 20px;
+    }
+
+    .controls {
+        margin-bottom: 20px;
+    }
+
+    button {
+        padding: 10px 20px;
+        margin: 0 10px;
+        font-size: 16px;
+        border: none;
+        border-radius: 8px;
+        cursor: pointer;
+        transition: 0.3s;
+        background-color: #ff4081;
+        color: white;
+    }
+
+    button:hover {
+        background-color: black;
+        transform: scale(1.1);
+    }
+
+    .boxes {
+        display: grid;
+        grid-template-columns: repeat(6, 60px);
+        grid-gap: 10px;
+        justify-content: center;
+    }
+
+    .box {
+        width: 60px;
+        height: 60px;
+        border: 2px solid black;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-weight: bold;
+        font-size: 18px;
+        background-color: white;
+        transition: 0.3s;
+        cursor: pointer;
+    }
+
+    .box:hover {
+        transform: scale(1.1);
+        border-color: #ff4081;
+    }
+
+    .highlight {
+        background-color: yellow;
+    }
+</style>
+</head>
+<body>
+
+<h1>Interactive Boxes Game</h1>
+
+<div class="controls">
+    <button onclick="start()">ON</button>
+    <button onclick="stop()">STOP</button>
+</div>
+
+<div class="boxes">
+    <!-- 26 boxes numbered 1 to 26 -->
+    <div class="box" id="box1">1</div>
+    <div class="box" id="box2">2</div>
+    <div class="box" id="box3">3</div>
+    <div class="box" id="box4">4</div>
+    <div class="box" id="box5">5</div>
+    <div class="box" id="box6">6</div>
+    <div class="box" id="box7">7</div>
+    <div class="box" id="box8">8</div>
+    <div class="box" id="box9">9</div>
+    <div class="box" id="box10">10</div>
+    <div class="box" id="box11">11</div>
+    <div class="box" id="box12">12</div>
+    <div class="box" id="box13">13</div>
+    <div class="box" id="box14">14</div>
+    <div class="box" id="box15">15</div>
+    <div class="box" id="box16">16</div>
+    <div class="box" id="box17">17</div>
+    <div class="box" id="box18">18</div>
+    <div class="box" id="box19">19</div>
+    <div class="box" id="box20">20</div>
+    <div class="box" id="box21">21</div>
+    <div class="box" id="box22">22</div>
+    <div class="box" id="box23">23</div>
+    <div class="box" id="box24">24</div>
+    <div class="box" id="box25">25</div>
+    <div class="box" id="box26">26</div>
+</div>
+
+<script>
+let interval;
+
+function start() {
+    let boxes = document.querySelectorAll(".box");
+
+    interval = setInterval(() => {
+        let randomIndex = Math.floor(Math.random() * boxes.length);
+        boxes.forEach(box => box.classList.remove("highlight"));
+
+        boxes[randomIndex].classList.add("highlight");
+    }, 300);
+}
+
+function stop() {
+    clearInterval(interval);
+}
+</script>
+
+</body>
+</html>

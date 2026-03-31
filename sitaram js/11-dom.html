@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document Object Model [DOM] </title>
+</head>
+<body>
+    <button> HELLOW !</button>
+        <button class="js-button">Second button</button>
+   <script>
+   console.log(document.querySelector('button').innerHTML);
+      document.querySelector('button')
+        .innerHTML = 'Changed';
+
+      const buttonElement = document.querySelector('.js-button');
+      console.log(buttonElement);
+        /*
+        // property 1 : document
+        console.log(document.title);
+        document.title = ' changed';
+        console.log(typeof document.title); // string
+
+        //property : 2 documnet.body
+        console.log(document.body);
+          console.log(typeof document.body); //object
+
+        // property 3 : document.body.innerHTML
+        document.body.innerHTML = 'changed';  
+        console.log(typeof   document.body.innerHTML );//string
+        document.body.innerHTML = '<button> GOOD JOB ! </button>';
+
+        */
+
+      // document.body.innerHTML = 'HELLOW';  // ye likhne se button main jo value ho change ho gaygege or button bhi gayab ho gayega
+      // document.title = ' GOOD JOB BABE !'; // tittle name change ho gaya. 
+
+
+    //  console.log(document.querySelector('button')); //    <button> HELLOW !</button>
+     //console.log(document.querySelector('body'));  // <body> </body>
+
+
+ 
+      
+  </script>
+
+    
+</body>
+</html>

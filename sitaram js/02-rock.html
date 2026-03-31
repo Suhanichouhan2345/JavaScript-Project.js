@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Rock Paper Scissor</title>
+</head>
+<style>
+  body {
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+  }
+</style>
+
+<body>
+  <p>Rock Paper Scissor</p>
+  <button onclick="
+        let randomvalue = Math.random();
+        let value = '';
+        if (randomvalue >= 0 && randomvalue < 1/3 ){
+         value = 'Rock';
+        } else if (randomvalue >= 1/3 && randomvalue > 2/3){
+            value = 'Paper';
+        } else if (randomvalue >= 2/3 && randomvalue >=1) {
+            value = 'Scissor';
+        }
+        console.log(value);
+          let result = '';
+          if( value === 'Rock'){
+            result = 'Tie.';
+          } else if ( value === 'Paper'){
+            result ='You loser.';
+          } else if (value === 'Scissor'){
+            result = 'You win.';
+          } 
+        alert(`You pickup rock. computer picked ${value}.${result}`);
+        ">Rock</button>
+
+  <button onclick="
+        let random = Math.random();
+        let value2 = '';
+        if(random >=0 && random  < 1/3){
+            value2 = 'Rock';
+        } else if(random >= 1/3 && random < 2/3 ){
+            value2 = 'Paper';
+        } else if (random >= 2/3 && random > 1){
+            value2 = 'Scissor';
+        }
+        console.log(value2);
+          let result2 = '';
+          if( value2 === 'Rock'){
+            result2 = 'You loser.';
+          } else if ( value2 === 'Paper'){
+            result2 ='You win.';
+          } else if (value2 === 'Scissor'){
+            result2 = 'Tie.';
+          } 
+        alert(`You pickup rock. computer picked ${value2}.${result2}`);
+        ">Paper</button>
+  <button onclick="
+        let random2 = Math.random();
+        let value3 = '';
+        if(random2 >=0 && random2  < 1/3){
+            value3 = 'Rock';
+        } else if(random2 >= 1/3 && random2 < 2/3 ){
+            value3 = 'Paper';
+        } else if (random2 >= 2/3 && random2 > 1){
+            value3 = 'Scissor';
+        }
+        console.log(value3);
+          let result3 = '';
+          if( value3 === 'Rock'){
+            result3 = 'You win.';
+          } else if ( value3 === 'Paper'){
+            result3 ='Tie.';
+          } else if (value3 === 'Scissor'){
+            result3 = 'You loser.';
+          } 
+        alert(`You pickup rock. computer picked ${value3}.${result3}`);
+            ">Scissor </button>
+  <script>
+  </script>
+</body>
+
+</html>

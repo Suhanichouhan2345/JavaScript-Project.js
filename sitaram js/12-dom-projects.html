@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dom Project</title>
+</head>
+
+<body>
+    <p> YOuTube Subscribe Button </p>
+    <button onclick="subscibe(); 
+       
+       " class="js-subscribed">Subscribe</button> <!-- extra spaces nahi hone chahiye -->
+    <script>
+        function subscibe() {
+            const ButtonElemnt = document.querySelector('.js-subscribed');
+
+
+            if (ButtonElemnt.innerHTML === 'Subscribe') {
+                ButtonElemnt.innerHTML = 'Subscribed';
+            } else {
+                ButtonElemnt.innerHTML = 'Subscribe';
+            }
+        }
+    </script>
+</body>
+
+</html>
